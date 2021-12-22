@@ -44,9 +44,9 @@ def ROIPoints(point_channel_array, X_L, X_R, Y_F, Y_R, Z):
                     (point_chan_array[:,0] >= ROI_X_L) & \
                     (point_chan_array[:,1] <= ROI_Y_F) & \
                     (point_chan_array[:,1] >= ROI_Y_R) &\
-                    (point_chan_array[:,2] <= ROI_Z), True, False)
+                    (point_chan_array[:,2] <= ROI_Z), True, False)      # point들중에 ROI에 해당되는 포인트들의 index
 
-    point_chan_array = point_chan_array[arg]
+    point_chan_array = point_chan_array[arg]        # ROI에 해당되는 point들만 남긴다
 
     return point_chan_array
 
@@ -90,23 +90,29 @@ print(os.getcwd() + '/velodyne')
 file_list = sorted(os.listdir(os.getcwd() + '/velodyne/'))  # sorted(os.listdir('/home/amlab/SemanticKITTI_point/dataset/sequences_0.06/' + scenario_num + '/velodyne/'))
 os.chdir(os.getcwd() + '/velodyne/')  # os.chdir('/home/amlab/SemanticKITTI_point/dataset/sequences_0.06/' + scenario_num + '/velodyne/') # change dir
 # print(file_list)
-grid_line_set = draw_grid_line()
-transform = homogeneous_matrix(0, 0, 1.73, 0, 0, np.pi/2.0)
+grid_line_set = draw_grid_line()        # grid 그리기
+transform = homogeneous_matrix(0, 0, 1.73, 0, 0, np.pi/2.0)     # (x, y, z, roll, pitch, yaw)
+   
+    # transform = [x, roll/   
+    #              y, pitch/
+    #              z, yaw]]
+    
 vis = o3d.visualization.VisualizerWithKeyCallback()
-vis.register_key_callback(32, change_view_callback)
+vis.register_key_callback(32, change_view_callback)     # space(공백) 누르면 change view
 
 vis.create_window(width=600, height=900)
 ctr = vis.get_view_control()
 
-opt = vis.get_render_option()
+opt = vis.get_render_option()       # return render option : http://www.open3d.org/docs/release/python_api/open3d.visualization.RenderOption.html
 
+# render option setting
 opt.background_color = np.asarray([18/255.0, 19/255.0, 13/255.0])
 opt.point_size = 3.0
 
 vis.add_geometry(grid_line_set)
 read_npy = np.load(file_list[0])
 draw_pcd = o3d.geometry.PointCloud()
-draw_pcd.points = o3d.utility.Vector3dVector(read_npy)
+draw_pcd.points = o3d.utility.Vector3dVector(read_npy)      # point cloud에 npy에서 읽어온 [x,y,z] 데이터 넣기
 draw_box = o3d.geometry.LineSet()
 draw_spd_vector = o3d.geometry.LineSet()
 
@@ -119,28 +125,32 @@ start = time.time()
 for i in range(len(file_list)):
     
     read_npy = np.load(file_list[i]) #load raw_data
+    print(read_npy)
 
     xyz_o3d = o3d.geometry.PointCloud()
     xyz_o3d.points = o3d.utility.Vector3dVector(read_npy)
 
     R = o3d.geometry.get_rotation_matrix_from_xyz([0, 0, np.pi/2])
-    xyz_o3d.rotate(R, center=(0, 0, 0)).translate((0, 0, 1.75))
+    # R = 회전변환행렬 = [cos@ -sin@ 0 /
+    #                  sin@  cos@ 0 /
+    #                   0     0   1 ]
+    xyz_o3d.rotate(R, center=(0, 0, 0)).translate((0, 0, 1.75))     # 회전, 평행이동
 
     
     # o3d.visualization.draw_geometries([xyz_o3d]) # raw_data visualization
 
-    raw_point = np.asarray(xyz_o3d.points)
+    raw_point = np.asarray(xyz_o3d.points)      
 
     draw_pcd.points = o3d.utility.Vector3dVector(raw_point)
     vis.update_geometry(draw_pcd)
 
     cur_plane_model, cur_inliers = xyz_o3d.segment_plane(distance_threshold=0.2,
                                             ransac_n=3,
-                                            num_iterations=40)
+                                            num_iterations=40)      # RANSAC 돌려서 plane inlier list 얻기
     cur_inlier_cloud = xyz_o3d.select_by_index(cur_inliers)
-    cur_inlier_cloud.paint_uniform_color([0.0, 0.0, 0.0])
-    cur_outlier_cloud = xyz_o3d.select_by_index(cur_inliers, invert=True)
-    cur_remain_point = np.asarray(cur_outlier_cloud.points)
+    cur_inlier_cloud.paint_uniform_color([0.0, 0.0, 0.0])       # plane inlier 검정으로 칠함
+    cur_outlier_cloud = xyz_o3d.select_by_index(cur_inliers, invert=True)   # outlier points 검출 (plane 제외 나머지)
+    cur_remain_point = np.asarray(cur_outlier_cloud.points)     # outlier points array
 
     rm_ground_pts = cur_remain_point
 
@@ -151,26 +161,26 @@ for i in range(len(file_list)):
     rm_o3d_points = o3d.geometry.PointCloud()
     rm_o3d_points.points = o3d.utility.Vector3dVector(rm_ground_pts)
 
-    voxel_pts = rm_o3d_points.voxel_down_sample(voxel_size=0.55)
+    voxel_pts = rm_o3d_points.voxel_down_sample(voxel_size=0.55)        # ground 제외헌 나머지 voxel down sample
 
 
     # o3d.visualization.draw_geometries([voxel_pts]) # voxel visualization
 
-    labels = np.array(voxel_pts.cluster_dbscan(eps=1.3, min_points= 8, print_progress=False))
-    max_label = labels.max()
+    labels = np.array(voxel_pts.cluster_dbscan(eps=1.3, min_points= 8, print_progress=False))       # clustering
+    max_label = labels.max()        # cluster 개수
     # print(f"point cloud has {max_label + 1} clusters")
     colors = plt.get_cmap("tab20")(labels / (max_label if max_label > 0 else 1))
     colors[labels < 0] = 0
     voxel_pts.colors = o3d.utility.Vector3dVector(colors[:, :3])
 
-    draw_pcd.points = voxel_pts.points
+    draw_pcd.points = voxel_pts.points              # (num_points, 3) 구조
     draw_pcd.colors = voxel_pts.colors
     vis.update_geometry(draw_pcd)
     # o3d.visualization.draw_geometries([voxel_pts]) # dbscan visualization
 
     numpy_xyz= np.asarray(voxel_pts.points)
-    numpy_labels = np.reshape(labels,(-1,1))
-    xyz_labels = np.hstack((numpy_xyz, numpy_labels))
+    numpy_labels = np.reshape(labels,(-1,1))        # 행 : cluster개수만큼 / 열 : 1 짜리의 array로 reshape
+    xyz_labels = np.hstack((numpy_xyz, numpy_labels))   # 행 : num_points / 열 : 4 = (x, y, z, labels)
 
 
     cur_object_list = make_object_list(xyz_labels)

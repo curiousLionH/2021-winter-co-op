@@ -44,9 +44,9 @@ class Tracker(object):
     def update(self, detections,v_x, v_y, cluster_data,dt):
         # print('dt : ',dt)
         if len(self.tracks) == 0:
-            for i in range(detections.shape[0]):
-                obj_arg = np.where(cluster_data[:,3]== i , True, False)
-                object_points = cluster_data[obj_arg]
+            for i in range(detections.shape[0]):            # detections에 cur_object_list 있는 상태이므로 행 개수(label개수)만큼 for문
+                obj_arg = np.where(cluster_data[:,3]== i , True, False)     
+                object_points = cluster_data[obj_arg]                   # 해당 label인 데이터 인덱싱
                 # print(detections[i])
                 track = Tracks(detections[i], self.trackId,v_x, v_y, object_points[:,:3],dt)
                 self.trackId +=1

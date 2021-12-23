@@ -53,13 +53,13 @@ def ROIPoints(point_channel_array, X_L, X_R, Y_F, Y_R, Z):
 def make_object_list(cluster_data):
 
     # print('image_detect!!!!!!!!!!!!',image_detect)
-    object_datas = cluster_data
+    object_datas = cluster_data             # 여기서 받은 cluster data는 행 : num_points / 열 : 4 = (x, y, z, labels)의 array
     object_list = np.array([])
-    max_label = int(cluster_data[:, 3].max())
+    max_label = int(cluster_data[:, 3].max())       # 라벨 개수
     # print(max_label)
     for i in range(max_label+1):
         # print(i)
-        obj_arg = np.where(object_datas[:,3] == i,True,False)
+        obj_arg = np.where(object_datas[:,3] == i,True,False)       # i번째 label에 해당하는 점들을 true로, 나머지는 false로
         object_data = object_datas[obj_arg]
         # print(object_data)
         if len(object_data) != 0:
@@ -67,19 +67,21 @@ def make_object_list(cluster_data):
             
             # slope_box = SlopeBBox(xyz_points)
 
+            # 해당 object의 점들의 x,y,z min, max를 구한다
             find_min_x = np.min(object_data[:,0])
             find_max_x = np.max(object_data[:,0])
             find_min_y = np.min(object_data[:,1])
             find_max_y = np.max(object_data[:,1])
             find_max_z = np.max(object_data[:,2])
             find_min_z = np.min(object_data[:,2])
+            # max-min 해서 bounding box의 width height 구하기 / 중심 구하기
             box_h = find_max_y-find_min_y
             box_w = find_max_x-find_min_x
             box_y = find_max_y - box_h/2
             box_x = find_max_x - box_w/2
 
         object_list = np.append(object_list,[box_x, box_y, find_max_z, find_min_z, box_w, box_h, i , 9999.0])
-        object_list = np.reshape(object_list,(-1,8))
+        object_list = np.reshape(object_list,(-1,8))      # (num개수, 방금 append한 8개 특징) 의 array로 reshape
 
     return object_list
 
@@ -125,7 +127,7 @@ start = time.time()
 for i in range(len(file_list)):
     
     read_npy = np.load(file_list[i]) #load raw_data
-    print(read_npy)
+    # print(read_npy)
 
     xyz_o3d = o3d.geometry.PointCloud()
     xyz_o3d.points = o3d.utility.Vector3dVector(read_npy)

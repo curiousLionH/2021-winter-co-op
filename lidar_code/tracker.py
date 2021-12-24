@@ -43,12 +43,12 @@ class Tracker(object):
 
     def update(self, detections,v_x, v_y, cluster_data,dt):
         # print('dt : ',dt)
-        if len(self.tracks) == 0:
+        if len(self.tracks) == 0:       # track이 비어있으면
             for i in range(detections.shape[0]):            # detections에 cur_object_list 있는 상태이므로 행 개수(label개수)만큼 for문
                 obj_arg = np.where(cluster_data[:,3]== i , True, False)     
-                object_points = cluster_data[obj_arg]                   # 해당 label인 데이터 인덱싱
+                object_points = cluster_data[obj_arg]                   # 해당 label인 데이터를 뽑아서 object_points에 넣음
                 # print(detections[i])
-                track = Tracks(detections[i], self.trackId,v_x, v_y, object_points[:,:3],dt)
+                track = Tracks(detections[i], self.trackId,v_x, v_y, object_points[:,:3],dt)    # [cur_object_list의 한 행], 
                 self.trackId +=1
                 self.tracks.append(track)
 

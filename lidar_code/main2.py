@@ -3,8 +3,10 @@ import numpy as np
 import open3d as o3d
 import matplotlib.pyplot as plt
 import os
+import sys
 from scipy.spatial import distance
 from scipy.optimize import linear_sum_assignment
+import struct
 
 import socket
 hostname = socket.gethostname()
@@ -16,7 +18,7 @@ bool_topview = True
 topview_param = o3d.io.read_pinhole_camera_parameters("/top_viewpoint_600x900.json")
 perspectiveview_param = o3d.io.read_pinhole_camera_parameters("perspective_viewpoint_600x900.json")
 
-tracker = Tracker(8,3,5)        # dist_threshold = 8, max_frame_skipped = 3, max_trace_length = 5
+tracker = Tracker(8,3,5)
 
 def change_view_callback(vis):
     ctr = vis.get_view_control()
@@ -53,9 +55,9 @@ def ROIPoints(point_channel_array, X_L, X_R, Y_F, Y_R, Z):
 def make_object_list(cluster_data):
 
     # print('image_detect!!!!!!!!!!!!',image_detect)
-    object_datas = cluster_data             # 여기서 받은 cluster data는 행 : num_points / 열 : 4 = (x, y, z, labels)의 array
+    object_datas = cluster_data         # 여기서 받은 cluster data는 행 : num_points / 열 : 4 = (x, y, z, labels)의 array
     object_list = np.array([])
-    max_label = int(cluster_data[:, 3].max())       # 라벨 개수
+    max_label = int(cluster_data[:, 3].max())       # 라벨개수
     # print(max_label)
     for i in range(max_label+1):
         # print(i)
@@ -80,17 +82,17 @@ def make_object_list(cluster_data):
             box_y = find_max_y - box_h/2
             box_x = find_max_x - box_w/2
 
-        object_list = np.append(object_list,[box_x, box_y, find_max_z, find_min_z, box_w, box_h, i , 9999.0])
-        object_list = np.reshape(object_list,(-1,8))      # (num개수, 방금 append한 8개 특징) 의 array로 reshape
+        object_list = np.append(object_list,[box_x, box_y, find_max_z, find_min_z, box_w, box_h, i , 9999.0])       # box의 중심 x,y / z의 max, min / box의 폭, 높이, label넘버
+        object_list = np.reshape(object_list,(-1,8))        # (num개수, 방금 append한 8개 특징) 의 array로 reshape
 
     return object_list
 
 
 
 scenario_num = str(20)
-print(os.getcwd() + '/velodyne')
-file_list = sorted(os.listdir(os.getcwd() + '/velodyne/'))  # sorted(os.listdir('/home/amlab/SemanticKITTI_point/dataset/sequences_0.06/' + scenario_num + '/velodyne/'))
-os.chdir(os.getcwd() + '/velodyne/')  # os.chdir('/home/amlab/SemanticKITTI_point/dataset/sequences_0.06/' + scenario_num + '/velodyne/') # change dir
+print(os.getcwd() + '/lidar_data')
+file_list = sorted(os.listdir(os.getcwd() + '/lidar_data/'))  # sorted(os.listdir('/home/amlab/SemanticKITTI_point/dataset/sequences_0.06/' + scenario_num + '/velodyne/'))
+os.chdir(os.getcwd() + '/lidar_data/')  # os.chdir('/home/amlab/SemanticKITTI_point/dataset/sequences_0.06/' + scenario_num + '/velodyne/') # change dir
 # print(file_list)
 grid_line_set = draw_grid_line()        # grid 그리기
 transform = homogeneous_matrix(0, 0, 1.73, 0, 0, np.pi/2.0)     # (x, y, z, roll, pitch, yaw)
@@ -98,6 +100,7 @@ transform = homogeneous_matrix(0, 0, 1.73, 0, 0, np.pi/2.0)     # (x, y, z, roll
     # transform = [x, roll/   
     #              y, pitch/
     #              z, yaw]]
+
     
 vis = o3d.visualization.VisualizerWithKeyCallback()
 vis.register_key_callback(32, change_view_callback)     # space(공백) 누르면 change view
@@ -112,9 +115,24 @@ opt.background_color = np.asarray([18/255.0, 19/255.0, 13/255.0])
 opt.point_size = 3.0
 
 vis.add_geometry(grid_line_set)
-read_npy = np.load(file_list[0])
+# read_npy = np.load(file_list[0])
+size_float = 4
+
+list_pcd = []
+with open (f"lidar_data/{file_list[0]}", "rb") as f:
+    byte = f.read(size_float*4)
+    while byte:
+        x,y,z,intensity = struct.unpack("ffff", byte)
+        # print(f"x = {x}, y = {y}, z = {z}")
+        list_pcd.append([x, y, z])
+        byte = f.read(size_float*4)
+np_pcd = np.asarray(list_pcd)
 draw_pcd = o3d.geometry.PointCloud()
-draw_pcd.points = o3d.utility.Vector3dVector(read_npy)      # point cloud에 npy에서 읽어온 [x,y,z] 데이터 넣기
+v3d = o3d.utility.Vector3dVector
+draw_pcd.points = v3d(np_pcd)
+
+# draw_pcd = o3d.geometry.PointCloud()
+# draw_pcd.points = o3d.utility.Vector3dVector(read_npy)      # point cloud에 npy에서 읽어온 [x,y,z] 데이터 넣기
 draw_box = o3d.geometry.LineSet()
 draw_spd_vector = o3d.geometry.LineSet()
 
@@ -125,12 +143,21 @@ vis.add_geometry(draw_spd_vector)
 
 start = time.time()
 for i in range(len(file_list)):
+
+    with open (f"lidar_data/{file_list[i]}", "rb") as f:
+        byte = f.read(size_float*4)
+        while byte:
+            x,y,z,intensity = struct.unpack("ffff", byte)
+            # print(f"x = {x}, y = {y}, z = {z}")
+            list_pcd.append([x, y, z])
+            byte = f.read(size_float*4)
     
-    read_npy = np.load(file_list[i]) #load raw_data
+    # read_npy = np.load(file_list[i]) #load raw_data
     # print(read_npy)
+    np_pcd = np.asarray(list_pcd)
 
     xyz_o3d = o3d.geometry.PointCloud()
-    xyz_o3d.points = o3d.utility.Vector3dVector(read_npy)
+    xyz_o3d.points = o3d.utility.Vector3dVector(np_pcd)
 
     R = o3d.geometry.get_rotation_matrix_from_xyz([0, 0, np.pi/2])
     # R = 회전변환행렬 = [cos@ -sin@ 0 /
@@ -146,9 +173,9 @@ for i in range(len(file_list)):
     draw_pcd.points = o3d.utility.Vector3dVector(raw_point)
     vis.update_geometry(draw_pcd)
 
-    cur_plane_model, cur_inliers = xyz_o3d.segment_plane(distance_threshold=0.2,
+    cur_plane_model, cur_inliers = xyz_o3d.segment_plane(distance_threshold=0.5,
                                             ransac_n=3,
-                                            num_iterations=40)      # RANSAC 돌려서 plane inlier list 얻기
+                                            num_iterations=60)      # RANSAC 돌려서 plane inlier list 얻기
     cur_inlier_cloud = xyz_o3d.select_by_index(cur_inliers)
     cur_inlier_cloud.paint_uniform_color([0.0, 0.0, 0.0])       # plane inlier 검정으로 칠함
     cur_outlier_cloud = xyz_o3d.select_by_index(cur_inliers, invert=True)   # outlier points 검출 (plane 제외 나머지)
@@ -186,10 +213,13 @@ for i in range(len(file_list)):
 
 
     cur_object_list = make_object_list(xyz_labels)
-    gar_arg = np.where(cur_object_list[:,0] != 9999, True,False)        # 살짝 쓰레기데이터 거르는 느낌..?
+    # print(cur_object_list[:,0])
+    gar_arg = np.where(cur_object_list[:,0] != 9999, True,False)               
     cur_object_list = cur_object_list[gar_arg]
+    rate_exclusion = np.where(cur_object_list[:,5]/cur_object_list[:,4] < 7, True, False)      # h/w >= 10인 cluster 거르기
+    cur_object_list = cur_object_list[rate_exclusion]
 
-    tracker.update(cur_object_list, 0 , 0 , xyz_labels, 0.1) #### 임의      # detections = cur_object_list, v_x = 0, v_y = 0, cluster_data = xyz_labels, dt = 0.1
+    tracker.update(cur_object_list, 0 , 0 , xyz_labels, 0.1) #### 임의 
 
     cur_object = np.array([])
 

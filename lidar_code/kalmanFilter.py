@@ -12,6 +12,7 @@ class KalmanFilter(object):
         self.init_pose = init_pose
         self.init_pose = np.append(self.init_pose,v_x)
         self.init_pose = np.append(self.init_pose,v_y)
+        # init_pose = [box_x, box_y, max_z, min_z, box_w, box_h, i, 9999?, v_x, v_y]
         self.lastResult = np.array([[0],[0],[0],[0],[0],[0],[0],[0]])
         self.initModel()
 

@@ -79,13 +79,13 @@ def make_object_list(cluster_data):
             # x,y,z의 min, max 값에 따른 좌표 값 구하기
             for i in range(len(object_data)):
                 if object_data[i,0] == find_min_x:
-                    find_min_x_y = object_data[i,0]
+                    find_min_x_y = object_data[i,1]
                 if object_data[i,0] == find_max_x:
-                    find_max_x_y = object_data[i,0]
+                    find_max_x_y = object_data[i,1]
                 if object_data[i,1] == find_min_y:
-                    find_min_y_x = object_data[i,1]
+                    find_min_y_x = object_data[i,0]
                 if object_data[i,1] == find_max_y:
-                    find_max_y_x = object_data[i,1]
+                    find_max_y_x = object_data[i,0]
                     
             # max-min 해서 bounding box의 width height 구하기 / 중심 구하기
             box_h = find_max_y-find_min_y

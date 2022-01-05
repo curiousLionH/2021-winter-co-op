@@ -2,6 +2,7 @@ import time
 import open3d as o3d
 import numpy as np
 from scipy.spatial import ConvexHull
+import math as m
 
 def minimum_bounding_rectangle(points):
     """
@@ -156,16 +157,55 @@ def homogeneous_matrix(x, y, z, roll, pitch, yaw):
     
     return Rt
 
-def draw_3d_bbox(x1, x2, x3, x4, min_z, max_z):
+# def draw_3d_bbox(x1, x2, x3, x4, min_z, max_z):
+#     points = [
+#     [x3[0], x3[1], min_z], # id == min_z
+#     [x2[0], x2[1], min_z],
+#     [x1[0], x1[1], min_z],
+#     [x4[0], x4[1], min_z],
+#     [x3[0], x3[1], max_z],
+#     [x2[0], x2[1], max_z],
+#     [x1[0], x1[1], max_z],
+#     [x4[0], x4[1], max_z],
+#     ]
+
+#     lines = [
+#         [0, 1],
+#         [0, 2],
+#         [1, 3],
+#         [2, 3],
+#         [4, 5],
+#         [4, 6],
+#         [5, 7],
+#         [6, 7],
+#         [0, 4],
+#         [1, 5],
+#         [2, 6],
+#         [3, 7],
+#     ]
+
+#     return points, np.array(lines)
+
+
+def draw_mid_points(x, y, min_z, max_z, x4, vx, vy, dt):
+    mid_points = [
+        [x,y,(max_z - min_z)/2]
+        [x+dt*vx, y+dt*vy, (max_z - min_z)/2]
+    ]
+    mid_lines = [
+        [0,1]
+    ]
+
+def draw_3d_bbox(x, y, width, depth, min_z, max_z, yaw):
     points = [
-    [x3[0], x3[1], min_z], # id == min_z
-    [x2[0], x2[1], min_z],
-    [x1[0], x1[1], min_z],
-    [x4[0], x4[1], min_z],
-    [x3[0], x3[1], max_z],
-    [x2[0], x2[1], max_z],
-    [x1[0], x1[1], max_z],
-    [x4[0], x4[1], max_z],
+    [m.cos(yaw)*(0 - width/2) - m.sin(yaw)*(0 - depth/2) + x, m.sin(yaw)*(0 - width/2) + m.cos(yaw)*(0 - depth/2) + y, min_z], # id == min_z
+    [m.cos(yaw)*(0 + width/2) - m.sin(yaw)*(0 - depth/2) + x, m.sin(yaw)*(0 + width/2) + m.cos(yaw)*(0 - depth/2) + y, min_z],
+    [m.cos(yaw)*(0 - width/2) - m.sin(yaw)*(0 + depth/2) + x, m.sin(yaw)*(0 - width/2) + m.cos(yaw)*(0 + depth/2) + y, min_z],
+    [m.cos(yaw)*(0 + width/2) - m.sin(yaw)*(0 + depth/2) + x, m.sin(yaw)*(0 + width/2) + m.cos(yaw)*(0 + depth/2) + y, min_z],
+    [m.cos(yaw)*(0 - width/2) - m.sin(yaw)*(0 - depth/2) + x, m.sin(yaw)*(0 - width/2) + m.cos(yaw)*(0 - depth/2) + y, max_z], # id == min_z
+    [m.cos(yaw)*(0 + width/2) - m.sin(yaw)*(0 - depth/2) + x, m.sin(yaw)*(0 + width/2) + m.cos(yaw)*(0 - depth/2) + y, max_z],
+    [m.cos(yaw)*(0 - width/2) - m.sin(yaw)*(0 + depth/2) + x, m.sin(yaw)*(0 - width/2) + m.cos(yaw)*(0 + depth/2) + y, max_z],
+    [m.cos(yaw)*(0 + width/2) - m.sin(yaw)*(0 + depth/2) + x, m.sin(yaw)*(0 + width/2) + m.cos(yaw)*(0 + depth/2) + y, max_z],
     ]
 
     lines = [

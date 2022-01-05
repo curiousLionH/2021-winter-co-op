@@ -12,6 +12,7 @@ class KalmanFilter(object):
         self.init_pose = init_pose
         self.init_pose = np.append(self.init_pose,v_x)
         self.init_pose = np.append(self.init_pose,v_y)
+        # init_pose = [box_x, box_y, max_z, min_z, box_w, box_h, i, 9999?, v_x, v_y]
         self.lastResult = np.array([[0],[0],[0],[0],[0],[0],[0],[0]])
         self.initModel()
 
@@ -81,7 +82,6 @@ class KalmanFilter(object):
 
         temp = np.asarray(self.predictstate)
         self.lastResult = self.predictstate
-        # print(f"temp : {temp}")
 
 
         return temp[0],temp[1],temp[2],temp[3],temp[4],temp[5],temp[6],temp[7]
@@ -102,8 +102,3 @@ class KalmanFilter(object):
         self.erroCov = np.matmul((np.identity(self.P.shape[0]) -np.matmul(self.kalmanGain,self.H)),self.predictedErrorCov)
         # print(self.state)
         return np.reshape(self.state,(1,10))
-
-
-
-#############################################################################33
-

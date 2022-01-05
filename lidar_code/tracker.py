@@ -1,3 +1,5 @@
+# 기존 tracker
+
 import numpy as np 
 from kalmanFilter import KalmanFilter
 # from KalmanFilter_v2 import KalmanFilter
@@ -8,16 +10,16 @@ from scipy.spatial import distance
 
 class Tracks(object):
     """docstring for Tracks"""
-    def __init__(self, detection, trackId,v_x,v_y,object_points,dt):
+    def __init__(self, detection, trackId,v_x,v_y,object_points,dt, box_dict = None):
         super(Tracks, self).__init__()
 
-        self.KF = KalmanFilter(detection.reshape(8,1),v_x,v_y,dt)
+        self.KF = KalmanFilter(detection.reshape(9,1),v_x,v_y,dt)
         self.KF.predict(dt)
-        self.KF.correct(detection.reshape(8,1),1,dt)
+        self.KF.correct(detection.reshape(9,1),1,dt)
         self.object_points = object_points
         # self.KF.correct(np.matrix(detection).reshape(2,1))
-        self.trace = deque(maxlen=10)
-        self.prediction = detection.reshape(1,8)
+        self.trace = deque(maxlen=11)
+        self.prediction = detection.reshape(1,9)
         # self.prediction = detection.reshape(1,2)
 
         self.trackId = trackId
@@ -41,19 +43,36 @@ class Tracker(object):
         self.trackId = 0
         self.tracks = []
 
-    def update(self, detections,v_x, v_y, cluster_data,dt):
-        # print('dt : ',dt)
-        if len(self.tracks) == 0:       # track이 비어있으면
-            for i in range(detections.shape[0]):            # detections에 cur_object_list 있는 상태이므로 행 개수(label개수)만큼 for문
-                obj_arg = np.where(cluster_data[:,3]== i , True, False)     
-                object_points = cluster_data[obj_arg]                   # 해당 label인 데이터를 뽑아서 object_points에 넣음
-                # print(detections[i])
-                track = Tracks(detections[i], self.trackId,v_x, v_y, object_points[:,:3],dt)    # [cur_object_list의 한 행], 
-                self.trackId +=1
-                self.tracks.append(track)
 
-        N = len(self.tracks)
-        M = len(detections)
+    def update(self, detections,v_x, v_y, cluster_data,dt, box_dict = None):
+        # print('dt : ',dt)
+        if len(self.tracks) == 0:
+            # i = 0
+            # for i in range(int(np.max(detections[:,6]))):
+            for i in range(detections.shape[0]):
+                
+            # for key in box_dict.keys():
+                obj_arg = np.where(cluster_data[:,3]== detections[i][6] , True, False)
+                #obj_arg = np.where(cluster_data[:,3]== i , True, False)
+                object_points = cluster_data[obj_arg]
+                # print(detections[i])
+                track = Tracks(detections[i], self.trackId,v_x, v_y, object_points[:,:3],dt)
+                # print(f"track : {track}")
+                self.trackId += 1
+                self.tracks.append(track)
+                
+                # print(f"i가 {i}일 때, trackID는 {self.trackId}이다.\n")
+                # i += 1
+
+        # for i in range(detections.shape[0]):
+        #     detections[i][4] = 5
+        #     print(detections[i][4])
+        
+
+        N = len(self.tracks)   
+        M = len(detections)  
+
+        print(f"N : {N}, M : {M}")
         assignment = [-1]*N
 
         if N != 0 and M ==0:
@@ -64,8 +83,9 @@ class Tracker(object):
             for i in range(N):
                 if np.size(detections) != 0:
                     for j in range(M):
-                        # diff = np.linalg.norm(self.tracks[i].prediction[0,:2] - detections[:,0:2], axis=1)
-                        diff = distance.minkowski(self.tracks[i].prediction[0,:2],detections[j,0:2],2)
+                        # diff = np.linalg.norm(self.tracks[i].prediction[0,:2] - detections[j:,0:2], axis=1)
+                        # diff = distance.minkowski(self.tracks[i].prediction[0,:2],detections[j,0:2],2)
+                        diff = distance.euclidean(self.tracks[i].prediction[0,:2],detections[j,0:2])
                         if diff <=2.5:
                             diff = diff * 3.5
                         elif diff > 2.5 and diff <= 6:
@@ -91,7 +111,8 @@ class Tracker(object):
                 cost = np.reshape(cost,(N,M))
                 cost = cost * 0.5
                 row, col = linear_sum_assignment(cost)
-                assignment = [-1]*N
+                assignment = [-1]*N  #불필요 
+                
                 for i in range(len(row)):
                     assignment[row[i]] = col[i]
 
@@ -130,6 +151,9 @@ class Tracker(object):
                 track = Tracks(detections[un_assigned_detects[i]], self.trackId,v_x,v_y,object_points_2[:,:3],dt)
                 self.trackId +=1
                 self.tracks.append(track)
+
+                
+                
 
         for i in range(len(assignment)+len(un_assigned_detects)):
             if self.tracks[i].start_frames <5:

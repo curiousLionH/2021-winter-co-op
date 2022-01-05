@@ -1,5 +1,3 @@
-# 기존 tracker
-
 import numpy as np 
 from kalmanFilter import KalmanFilter
 # from KalmanFilter_v2 import KalmanFilter
@@ -10,7 +8,7 @@ from scipy.spatial import distance
 
 class Tracks(object):
     """docstring for Tracks"""
-    def __init__(self, detection, trackId,v_x,v_y,object_points,dt, box_dict = None):
+    def __init__(self, detection, trackId,v_x,v_y,object_points,dt):
         super(Tracks, self).__init__()
 
         self.KF = KalmanFilter(detection.reshape(8,1),v_x,v_y,dt)
@@ -43,16 +41,14 @@ class Tracker(object):
         self.trackId = 0
         self.tracks = []
 
-
-    def update(self, detections,v_x, v_y, cluster_data,dt, box_dict = None):
+    def update(self, detections,v_x, v_y, cluster_data,dt):
         # print('dt : ',dt)
-        if len(self.tracks) == 0:
-            for i in range(detections.shape[0]):
-                obj_arg = np.where(cluster_data[:,3]== i , True, False)
-                object_points = cluster_data[obj_arg]
+        if len(self.tracks) == 0:       # track이 비어있으면
+            for i in range(detections.shape[0]):            # detections에 cur_object_list 있는 상태이므로 행 개수(label개수)만큼 for문
+                obj_arg = np.where(cluster_data[:,3]== i , True, False)     
+                object_points = cluster_data[obj_arg]                   # 해당 label인 데이터를 뽑아서 object_points에 넣음
                 # print(detections[i])
-                track = Tracks(detections[i], self.trackId,v_x, v_y, object_points[:,:3],dt)
-                print(track)
+                track = Tracks(detections[i], self.trackId,v_x, v_y, object_points[:,:3],dt)    # [cur_object_list의 한 행], 
                 self.trackId +=1
                 self.tracks.append(track)
 
@@ -134,7 +130,6 @@ class Tracker(object):
                 track = Tracks(detections[un_assigned_detects[i]], self.trackId,v_x,v_y,object_points_2[:,:3],dt)
                 self.trackId +=1
                 self.tracks.append(track)
-                
 
         for i in range(len(assignment)+len(un_assigned_detects)):
             if self.tracks[i].start_frames <5:

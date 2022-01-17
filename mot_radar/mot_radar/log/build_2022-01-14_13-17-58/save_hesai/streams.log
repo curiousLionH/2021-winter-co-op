@@ -1,0 +1,28 @@
+[0.517s] Invoking command in '/home/amlab/coop_ws/src/mot_radar/mot_radar/build/save_hesai': AMENT_PREFIX_PATH=/home/amlab/coop_ws/src/mot_radar/mot_radar/install/custom_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/amlab/coop_ws/src/mot_radar/mot_radar/install/custom_msgs:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/home/amlab/coop_ws/src/mot_radar/mot_radar/install/custom_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/amlab/coop_ws/src/mot_radar/mot_radar/install/save_hesai/lib/python3.8/site-packages:/home/amlab/coop_ws/src/mot_radar/mot_radar/install/custom_msgs/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/amlab/coop_ws/src/mot_radar/mot_radar/install/save_hesai --editable --build-directory /home/amlab/coop_ws/src/mot_radar/mot_radar/build/save_hesai/build --no-deps install_data --install-dir /home/amlab/coop_ws/src/mot_radar/mot_radar/install/save_hesai
+[0.695s] running develop
+[0.790s] running egg_info
+[0.791s] creating save_hesai.egg-info
+[0.791s] writing save_hesai.egg-info/PKG-INFO
+[0.791s] writing dependency_links to save_hesai.egg-info/dependency_links.txt
+[0.791s] writing entry points to save_hesai.egg-info/entry_points.txt
+[0.791s] writing requirements to save_hesai.egg-info/requires.txt
+[0.791s] writing top-level names to save_hesai.egg-info/top_level.txt
+[0.793s] writing manifest file 'save_hesai.egg-info/SOURCES.txt'
+[0.814s] reading manifest file 'save_hesai.egg-info/SOURCES.txt'
+[0.815s] writing manifest file 'save_hesai.egg-info/SOURCES.txt'
+[0.836s] running build_ext
+[0.837s] Creating /home/amlab/coop_ws/src/mot_radar/mot_radar/install/save_hesai/lib/python3.8/site-packages/site.py
+[0.838s] Creating /home/amlab/coop_ws/src/mot_radar/mot_radar/install/save_hesai/lib/python3.8/site-packages/save-hesai.egg-link (link to .)
+[0.838s] Installing fit_test script to /home/amlab/coop_ws/src/mot_radar/mot_radar/install/save_hesai/lib/save_hesai
+[0.839s] Installing get_txt script to /home/amlab/coop_ws/src/mot_radar/mot_radar/install/save_hesai/lib/save_hesai
+[0.839s] Installing save_hesai script to /home/amlab/coop_ws/src/mot_radar/mot_radar/install/save_hesai/lib/save_hesai
+[0.839s] Installing save_hesai_test script to /home/amlab/coop_ws/src/mot_radar/mot_radar/install/save_hesai/lib/save_hesai
+[0.839s] 
+[0.839s] Installed /home/amlab/coop_ws/src/mot_radar/mot_radar/build/save_hesai
+[0.839s] running install_data
+[0.839s] creating /home/amlab/coop_ws/src/mot_radar/mot_radar/install/save_hesai/share/ament_index
+[0.839s] creating /home/amlab/coop_ws/src/mot_radar/mot_radar/install/save_hesai/share/ament_index/resource_index
+[0.840s] creating /home/amlab/coop_ws/src/mot_radar/mot_radar/install/save_hesai/share/ament_index/resource_index/packages
+[0.840s] copying resource/save_hesai -> /home/amlab/coop_ws/src/mot_radar/mot_radar/install/save_hesai/share/ament_index/resource_index/packages
+[0.840s] copying package.xml -> /home/amlab/coop_ws/src/mot_radar/mot_radar/install/save_hesai/share/save_hesai
+[0.858s] Invoked command in '/home/amlab/coop_ws/src/mot_radar/mot_radar/build/save_hesai' returned '0': AMENT_PREFIX_PATH=/home/amlab/coop_ws/src/mot_radar/mot_radar/install/custom_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/amlab/coop_ws/src/mot_radar/mot_radar/install/custom_msgs:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/home/amlab/coop_ws/src/mot_radar/mot_radar/install/custom_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/amlab/coop_ws/src/mot_radar/mot_radar/install/save_hesai/lib/python3.8/site-packages:/home/amlab/coop_ws/src/mot_radar/mot_radar/install/custom_msgs/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/amlab/coop_ws/src/mot_radar/mot_radar/install/save_hesai --editable --build-directory /home/amlab/coop_ws/src/mot_radar/mot_radar/build/save_hesai/build --no-deps install_data --install-dir /home/amlab/coop_ws/src/mot_radar/mot_radar/install/save_hesai

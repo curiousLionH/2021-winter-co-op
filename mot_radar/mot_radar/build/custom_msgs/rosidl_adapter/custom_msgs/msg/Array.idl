@@ -1,0 +1,22 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from custom_msgs/msg/Array.msg
+// generated code does not contain a copyright notice
+
+
+module custom_msgs {
+  module msg {
+    struct Array {
+      sequence<float> x;
+
+      sequence<float> y;
+
+      sequence<float> w;
+
+      sequence<float> h;
+
+      sequence<float> z;
+
+      sequence<float> id;
+    };
+  };
+};

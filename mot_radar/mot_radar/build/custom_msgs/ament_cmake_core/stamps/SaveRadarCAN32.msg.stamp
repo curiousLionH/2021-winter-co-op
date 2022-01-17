@@ -1,0 +1,8 @@
+float64 can_vehicle_stat
+float64 can_day_night_status
+float64 can_wiper_status
+float64 can_yaw_rate_validity
+float64 can_yaw_rate
+float64 can_vehicle_speed_validity
+float64 can_vehicle_speed_direction
+float64 can_vehicle_speed

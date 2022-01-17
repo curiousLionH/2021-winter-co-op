@@ -1,0 +1,4 @@
+float64 can_sensor_polarity
+float64 can_sensor_lat_offset
+float64 can_sensor_long_offset
+float64 can_sensor_hangle_offset

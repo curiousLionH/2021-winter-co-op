@@ -1,0 +1,3 @@
+float64 can_sensor_fov_hor
+float64 can_doppler_coverage
+float64 can_range_coverage

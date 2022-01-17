@@ -1,0 +1,2 @@
+float64 can_det_time_since_meas
+float64 can_sensor_time_stamp

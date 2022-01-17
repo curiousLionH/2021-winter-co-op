@@ -1,0 +1,12 @@
+float64 can_interference_type
+float64 can_recommend_unconverge
+float64 can_blockage_sidelobe_filter_val
+float64 can_radar_align_incomplete
+float64 can_blockage_sidelobe
+float64 can_blockage_mnr
+float64 can_radar_ext_cond_nok
+float64 can_radar_align_out_range
+float64 can_radar_align_not_start
+float64 can_radar_overheat_error
+float64 can_radar_not_op
+float64 can_xcvr_operational

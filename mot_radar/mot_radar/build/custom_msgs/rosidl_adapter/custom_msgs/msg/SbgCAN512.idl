@@ -1,0 +1,14 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from custom_msgs/msg/SbgCAN512.msg
+// generated code does not contain a copyright notice
+
+
+module custom_msgs {
+  module msg {
+    struct SbgCAN512 {
+      uint32 time_stamp;
+
+      uint16 event_status;
+    };
+  };
+};

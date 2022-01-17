@@ -1,0 +1,6 @@
+[console_scripts]
+fit_test = save_hesai.fit_test:main
+get_txt = save_hesai.get_txt:main
+save_hesai = save_hesai.main_v2:main
+save_hesai_test = save_hesai.test:main
+

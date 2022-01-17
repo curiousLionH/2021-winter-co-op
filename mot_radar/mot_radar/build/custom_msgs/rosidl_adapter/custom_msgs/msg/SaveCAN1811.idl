@@ -1,0 +1,18 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from custom_msgs/msg/SaveCAN1811.msg
+// generated code does not contain a copyright notice
+
+
+module custom_msgs {
+  module msg {
+    struct SaveCAN1811 {
+      float lat_accel;
+
+      float long_accel;
+
+      float yaw_rate;
+
+      uint16 brk_cylinder;
+    };
+  };
+};

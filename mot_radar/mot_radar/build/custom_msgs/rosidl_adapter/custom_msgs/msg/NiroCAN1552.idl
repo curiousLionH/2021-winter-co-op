@@ -1,0 +1,14 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from custom_msgs/msg/NiroCAN1552.msg
+// generated code does not contain a copyright notice
+
+
+module custom_msgs {
+  module msg {
+    struct NiroCAN1552 {
+      uint32 gcs_lat;
+
+      uint32 gcs_long;
+    };
+  };
+};

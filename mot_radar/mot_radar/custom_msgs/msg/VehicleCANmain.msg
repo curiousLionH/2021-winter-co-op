@@ -1,0 +1,7 @@
+SaveCAN342 eait_control_01
+SaveCAN343 eait_control_02
+SaveCAN1808 eait_info_eps
+SaveCAN1809 eait_info_acc
+SaveCAN1810 eait_info_spd
+SaveCAN1811 eait_info_imu
+SaveCAN1812 eait_info_rad

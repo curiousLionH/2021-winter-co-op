@@ -1,0 +1,34 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from custom_msgs/msg/SaveRadarCAN257.msg
+// generated code does not contain a copyright notice
+
+
+module custom_msgs {
+  module msg {
+    struct SaveRadarCAN257 {
+      double can_interference_type;
+
+      double can_recommend_unconverge;
+
+      double can_blockage_sidelobe_filter_val;
+
+      double can_radar_align_incomplete;
+
+      double can_blockage_sidelobe;
+
+      double can_blockage_mnr;
+
+      double can_radar_ext_cond_nok;
+
+      double can_radar_align_out_range;
+
+      double can_radar_align_not_start;
+
+      double can_radar_overheat_error;
+
+      double can_radar_not_op;
+
+      double can_xcvr_operational;
+    };
+  };
+};

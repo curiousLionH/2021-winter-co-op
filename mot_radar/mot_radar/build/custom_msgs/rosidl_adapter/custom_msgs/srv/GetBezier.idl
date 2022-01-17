@@ -1,0 +1,35 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from custom_msgs/srv/GetBezier.srv
+// generated code does not contain a copyright notice
+
+
+module custom_msgs {
+  module srv {
+    @verbatim (language="comment", text=
+      " Request")
+    struct GetBezier_Request {
+      int16 direction;
+
+      double distance1;
+
+      double distance2;
+
+      double distance3;
+    };
+    @verbatim (language="comment", text=
+      " Response")
+    struct GetBezier_Response {
+      sequence<double> path1_x;
+
+      sequence<double> path1_y;
+
+      sequence<double> path2_x;
+
+      sequence<double> path2_y;
+
+      sequence<double> path3_x;
+
+      sequence<double> path3_y;
+    };
+  };
+};

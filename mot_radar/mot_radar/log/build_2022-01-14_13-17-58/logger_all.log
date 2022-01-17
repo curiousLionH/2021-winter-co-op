@@ -1,0 +1,228 @@
+[0.127s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--symlink-install']
+[0.127s] DEBUG:colcon:Parsed command line arguments: Namespace(allow_overriding=[], ament_cmake_args=None, base_paths=['.'], build_base='build', catkin_cmake_args=None, catkin_skip_building_tests=False, cmake_args=None, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, cmake_target=None, cmake_target_skip_unavailable=False, continue_on_error=False, event_handlers=None, executor='parallel', ignore_user_meta=False, install_base='install', log_base=None, log_level=None, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7fd8874abfd0>>, merge_install=False, metas=['./colcon.meta'], packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_end=None, packages_ignore=None, packages_ignore_regex=None, packages_select=None, packages_select_build_failed=False, packages_select_by_dep=None, packages_select_regex=None, packages_select_test_failures=False, packages_skip=None, packages_skip_build_finished=False, packages_skip_by_dep=None, packages_skip_regex=None, packages_skip_test_passed=False, packages_skip_up_to=None, packages_start=None, packages_up_to=None, packages_up_to_regex=None, parallel_workers=16, paths=None, symlink_install=True, test_result_base=None, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7fd8874abfd0>, verb_name='build', verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7fd8874b6490>)
+[0.132s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.132s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.132s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.132s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.132s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.132s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.132s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/amlab/coop_ws/src/mot_radar/mot_radar'
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.132s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.133s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(__pycache__) by extensions ['ignore', 'ignore_ament_install']
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(__pycache__) by extension 'ignore'
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(__pycache__) by extension 'ignore_ament_install'
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(__pycache__) by extensions ['colcon_pkg']
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(__pycache__) by extension 'colcon_pkg'
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(__pycache__) by extensions ['colcon_meta']
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(__pycache__) by extension 'colcon_meta'
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(__pycache__) by extensions ['ros']
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(__pycache__) by extension 'ros'
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(__pycache__) by extensions ['cmake', 'python']
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(__pycache__) by extension 'cmake'
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(__pycache__) by extension 'python'
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(__pycache__) by extensions ['python_setup_py']
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(__pycache__) by extension 'python_setup_py'
+[0.139s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(custom_msgs) by extensions ['ignore', 'ignore_ament_install']
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(custom_msgs) by extension 'ignore'
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(custom_msgs) by extension 'ignore_ament_install'
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(custom_msgs) by extensions ['colcon_pkg']
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(custom_msgs) by extension 'colcon_pkg'
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(custom_msgs) by extensions ['colcon_meta']
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(custom_msgs) by extension 'colcon_meta'
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(custom_msgs) by extensions ['ros']
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(custom_msgs) by extension 'ros'
+[0.142s] DEBUG:colcon.colcon_core.package_identification:Package 'custom_msgs' with type 'ros.ament_cmake' and name 'custom_msgs'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(save_hesai) by extensions ['ignore', 'ignore_ament_install']
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(save_hesai) by extension 'ignore'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(save_hesai) by extension 'ignore_ament_install'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(save_hesai) by extensions ['colcon_pkg']
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(save_hesai) by extension 'colcon_pkg'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(save_hesai) by extensions ['colcon_meta']
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(save_hesai) by extension 'colcon_meta'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(save_hesai) by extensions ['ros']
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(save_hesai) by extension 'ros'
+[0.143s] DEBUG:colcon.colcon_core.package_identification:Package 'save_hesai' with type 'ros.ament_python' and name 'save_hesai'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(sub) by extensions ['ignore', 'ignore_ament_install']
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(sub) by extension 'ignore'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(sub) by extension 'ignore_ament_install'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(sub) by extensions ['colcon_pkg']
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(sub) by extension 'colcon_pkg'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(sub) by extensions ['colcon_meta']
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(sub) by extension 'colcon_meta'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(sub) by extensions ['ros']
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(sub) by extension 'ros'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(sub) by extensions ['cmake', 'python']
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(sub) by extension 'cmake'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(sub) by extension 'python'
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(sub) by extensions ['python_setup_py']
+[0.143s] Level 1:colcon.colcon_core.package_identification:_identify(sub) by extension 'python_setup_py'
+[0.143s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.143s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.143s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.143s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.143s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.157s] Level 5:colcon.colcon_core.verb:set package 'custom_msgs' build argument 'cmake_args' from command line to 'None'
+[0.157s] Level 5:colcon.colcon_core.verb:set package 'custom_msgs' build argument 'cmake_target' from command line to 'None'
+[0.157s] Level 5:colcon.colcon_core.verb:set package 'custom_msgs' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.157s] Level 5:colcon.colcon_core.verb:set package 'custom_msgs' build argument 'cmake_clean_cache' from command line to 'False'
+[0.157s] Level 5:colcon.colcon_core.verb:set package 'custom_msgs' build argument 'cmake_clean_first' from command line to 'False'
+[0.157s] Level 5:colcon.colcon_core.verb:set package 'custom_msgs' build argument 'cmake_force_configure' from command line to 'False'
+[0.157s] Level 5:colcon.colcon_core.verb:set package 'custom_msgs' build argument 'ament_cmake_args' from command line to 'None'
+[0.157s] Level 5:colcon.colcon_core.verb:set package 'custom_msgs' build argument 'catkin_cmake_args' from command line to 'None'
+[0.157s] Level 5:colcon.colcon_core.verb:set package 'custom_msgs' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.157s] DEBUG:colcon.colcon_core.verb:Building package 'custom_msgs' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/amlab/coop_ws/src/mot_radar/mot_radar/build/custom_msgs', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/custom_msgs', 'merge_install': False, 'path': '/home/amlab/coop_ws/src/mot_radar/mot_radar/custom_msgs', 'symlink_install': True, 'test_result_base': None}
+[0.157s] Level 5:colcon.colcon_core.verb:set package 'save_hesai' build argument 'cmake_args' from command line to 'None'
+[0.157s] Level 5:colcon.colcon_core.verb:set package 'save_hesai' build argument 'cmake_target' from command line to 'None'
+[0.157s] Level 5:colcon.colcon_core.verb:set package 'save_hesai' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.157s] Level 5:colcon.colcon_core.verb:set package 'save_hesai' build argument 'cmake_clean_cache' from command line to 'False'
+[0.158s] Level 5:colcon.colcon_core.verb:set package 'save_hesai' build argument 'cmake_clean_first' from command line to 'False'
+[0.158s] Level 5:colcon.colcon_core.verb:set package 'save_hesai' build argument 'cmake_force_configure' from command line to 'False'
+[0.158s] Level 5:colcon.colcon_core.verb:set package 'save_hesai' build argument 'ament_cmake_args' from command line to 'None'
+[0.158s] Level 5:colcon.colcon_core.verb:set package 'save_hesai' build argument 'catkin_cmake_args' from command line to 'None'
+[0.158s] Level 5:colcon.colcon_core.verb:set package 'save_hesai' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.158s] DEBUG:colcon.colcon_core.verb:Building package 'save_hesai' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/amlab/coop_ws/src/mot_radar/mot_radar/build/save_hesai', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/save_hesai', 'merge_install': False, 'path': '/home/amlab/coop_ws/src/mot_radar/mot_radar/save_hesai', 'symlink_install': True, 'test_result_base': None}
+[0.161s] WARNING:colcon.colcon_core.verb:Some selected packages are already built in one or more underlay workspaces:
+	'custom_msgs' is in: /home/amlab/coop_ws/install/custom_msgs
+If a package in a merged underlay workspace is overridden and it installs headers, then all packages in the overlay must sort their include directories by workspace order. Failure to do so may result in build failures or undefined behavior at run time.
+If the overridden package is used by another package in any underlay, then the overriding package in the overlay must be API and ABI compatible or undefined behavior at run time may occur.
+
+If you understand the risks and want to override a package anyways, add the following to the command line:
+	--allow-overriding custom_msgs
+
+This may be promoted to an error in a future release of colcon-core.
+[0.161s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.162s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.162s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/amlab/coop_ws/src/mot_radar/mot_radar/custom_msgs' with build type 'ament_cmake'
+[0.162s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/amlab/coop_ws/src/mot_radar/mot_radar/custom_msgs'
+[0.167s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.167s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.167s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.178s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/amlab/coop_ws/src/mot_radar/mot_radar/build/custom_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/amlab/coop_ws/install/save_image:/home/amlab/coop_ws/install/mot_radar:/opt/ros/foxy /usr/bin/cmake /home/amlab/coop_ws/src/mot_radar/mot_radar/custom_msgs -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/amlab/coop_ws/src/mot_radar/mot_radar/install/custom_msgs
+[2.961s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/amlab/coop_ws/src/mot_radar/mot_radar/build/custom_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/amlab/coop_ws/install/save_image:/home/amlab/coop_ws/install/mot_radar:/opt/ros/foxy /usr/bin/cmake /home/amlab/coop_ws/src/mot_radar/mot_radar/custom_msgs -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/amlab/coop_ws/src/mot_radar/mot_radar/install/custom_msgs
+[2.965s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/amlab/coop_ws/src/mot_radar/mot_radar/build/custom_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/amlab/coop_ws/install/save_image:/home/amlab/coop_ws/install/mot_radar:/opt/ros/foxy /usr/bin/cmake --build /home/amlab/coop_ws/src/mot_radar/mot_radar/build/custom_msgs -- -j16 -l16
+[67.380s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/amlab/coop_ws/src/mot_radar/mot_radar/build/custom_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/amlab/coop_ws/install/save_image:/home/amlab/coop_ws/install/mot_radar:/opt/ros/foxy /usr/bin/cmake --build /home/amlab/coop_ws/src/mot_radar/mot_radar/build/custom_msgs -- -j16 -l16
+[70.397s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/amlab/coop_ws/src/mot_radar/mot_radar/build/custom_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/amlab/coop_ws/install/save_image:/home/amlab/coop_ws/install/mot_radar:/opt/ros/foxy /usr/bin/cmake --install /home/amlab/coop_ws/src/mot_radar/mot_radar/build/custom_msgs
+[98.284s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(custom_msgs)
+[98.286s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/amlab/coop_ws/src/mot_radar/mot_radar/build/custom_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/amlab/coop_ws/install/save_image:/home/amlab/coop_ws/install/mot_radar:/opt/ros/foxy /usr/bin/cmake --install /home/amlab/coop_ws/src/mot_radar/mot_radar/build/custom_msgs
+[98.298s] Level 1:colcon.colcon_core.environment:checking '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/custom_msgs' for CMake module files
+[98.298s] Level 1:colcon.colcon_core.environment:checking '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/custom_msgs' for CMake config files
+[98.312s] Level 1:colcon.colcon_core.shell:create_environment_hook('custom_msgs', 'cmake_prefix_path')
+[98.312s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/custom_msgs/share/custom_msgs/hook/cmake_prefix_path.ps1'
+[98.313s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/custom_msgs/share/custom_msgs/hook/cmake_prefix_path.dsv'
+[98.313s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/custom_msgs/share/custom_msgs/hook/cmake_prefix_path.sh'
+[98.314s] Level 1:colcon.colcon_core.environment:checking '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/custom_msgs/lib'
+[98.314s] Level 1:colcon.colcon_core.shell:create_environment_hook('custom_msgs', 'ld_library_path_lib')
+[98.315s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/custom_msgs/share/custom_msgs/hook/ld_library_path_lib.ps1'
+[98.315s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/custom_msgs/share/custom_msgs/hook/ld_library_path_lib.dsv'
+[98.315s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/custom_msgs/share/custom_msgs/hook/ld_library_path_lib.sh'
+[98.315s] Level 1:colcon.colcon_core.environment:checking '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/custom_msgs/bin'
+[98.315s] Level 1:colcon.colcon_core.environment:checking '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/custom_msgs/lib/pkgconfig/custom_msgs.pc'
+[98.315s] Level 1:colcon.colcon_core.environment:checking '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/custom_msgs/lib/python3.8/site-packages'
+[98.315s] Level 1:colcon.colcon_core.shell:create_environment_hook('custom_msgs', 'pythonpath')
+[98.315s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/custom_msgs/share/custom_msgs/hook/pythonpath.ps1'
+[98.316s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/custom_msgs/share/custom_msgs/hook/pythonpath.dsv'
+[98.316s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/custom_msgs/share/custom_msgs/hook/pythonpath.sh'
+[98.316s] INFO:colcon.colcon_core.shell:Creating package script '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/custom_msgs/share/custom_msgs/package.ps1'
+[98.317s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/custom_msgs/share/custom_msgs/package.dsv'
+[98.317s] INFO:colcon.colcon_core.shell:Creating package script '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/custom_msgs/share/custom_msgs/package.sh'
+[98.318s] INFO:colcon.colcon_core.shell:Creating package script '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/custom_msgs/share/custom_msgs/package.bash'
+[98.318s] INFO:colcon.colcon_core.shell:Creating package script '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/custom_msgs/share/custom_msgs/package.zsh'
+[98.319s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/amlab/coop_ws/src/mot_radar/mot_radar/install/custom_msgs/share/colcon-core/packages/custom_msgs)
+[101.469s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(custom_msgs)
+[101.471s] Level 1:colcon.colcon_core.environment:checking '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/custom_msgs' for CMake module files
+[101.472s] Level 1:colcon.colcon_core.environment:checking '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/custom_msgs' for CMake config files
+[101.487s] Level 1:colcon.colcon_core.shell:create_environment_hook('custom_msgs', 'cmake_prefix_path')
+[101.487s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/custom_msgs/share/custom_msgs/hook/cmake_prefix_path.ps1'
+[101.488s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/custom_msgs/share/custom_msgs/hook/cmake_prefix_path.dsv'
+[101.489s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/custom_msgs/share/custom_msgs/hook/cmake_prefix_path.sh'
+[101.489s] Level 1:colcon.colcon_core.environment:checking '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/custom_msgs/lib'
+[101.489s] Level 1:colcon.colcon_core.shell:create_environment_hook('custom_msgs', 'ld_library_path_lib')
+[101.489s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/custom_msgs/share/custom_msgs/hook/ld_library_path_lib.ps1'
+[101.490s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/custom_msgs/share/custom_msgs/hook/ld_library_path_lib.dsv'
+[101.490s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/custom_msgs/share/custom_msgs/hook/ld_library_path_lib.sh'
+[101.490s] Level 1:colcon.colcon_core.environment:checking '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/custom_msgs/bin'
+[101.490s] Level 1:colcon.colcon_core.environment:checking '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/custom_msgs/lib/pkgconfig/custom_msgs.pc'
+[101.490s] Level 1:colcon.colcon_core.environment:checking '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/custom_msgs/lib/python3.8/site-packages'
+[101.490s] Level 1:colcon.colcon_core.shell:create_environment_hook('custom_msgs', 'pythonpath')
+[101.490s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/custom_msgs/share/custom_msgs/hook/pythonpath.ps1'
+[101.491s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/custom_msgs/share/custom_msgs/hook/pythonpath.dsv'
+[101.491s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/custom_msgs/share/custom_msgs/hook/pythonpath.sh'
+[101.491s] INFO:colcon.colcon_core.shell:Creating package script '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/custom_msgs/share/custom_msgs/package.ps1'
+[101.492s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/custom_msgs/share/custom_msgs/package.dsv'
+[101.492s] INFO:colcon.colcon_core.shell:Creating package script '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/custom_msgs/share/custom_msgs/package.sh'
+[101.492s] INFO:colcon.colcon_core.shell:Creating package script '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/custom_msgs/share/custom_msgs/package.bash'
+[101.492s] INFO:colcon.colcon_core.shell:Creating package script '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/custom_msgs/share/custom_msgs/package.zsh'
+[101.492s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/amlab/coop_ws/src/mot_radar/mot_radar/install/custom_msgs/share/colcon-core/packages/custom_msgs)
+[101.493s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/amlab/coop_ws/src/mot_radar/mot_radar/save_hesai' with build type 'ament_python'
+[101.493s] Level 1:colcon.colcon_core.shell:create_environment_hook('save_hesai', 'ament_prefix_path')
+[101.493s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/save_hesai/share/save_hesai/hook/ament_prefix_path.ps1'
+[101.494s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/save_hesai/share/save_hesai/hook/ament_prefix_path.dsv'
+[101.495s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/save_hesai/share/save_hesai/hook/ament_prefix_path.sh'
+[101.495s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[101.495s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[101.679s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/amlab/coop_ws/src/mot_radar/mot_radar/save_hesai'
+[101.681s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[101.681s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[102.012s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/amlab/coop_ws/src/mot_radar/mot_radar/build/save_hesai': AMENT_PREFIX_PATH=/home/amlab/coop_ws/src/mot_radar/mot_radar/install/custom_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/amlab/coop_ws/src/mot_radar/mot_radar/install/custom_msgs:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/home/amlab/coop_ws/src/mot_radar/mot_radar/install/custom_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/amlab/coop_ws/src/mot_radar/mot_radar/install/save_hesai/lib/python3.8/site-packages:/home/amlab/coop_ws/src/mot_radar/mot_radar/install/custom_msgs/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/amlab/coop_ws/src/mot_radar/mot_radar/install/save_hesai --editable --build-directory /home/amlab/coop_ws/src/mot_radar/mot_radar/build/save_hesai/build --no-deps install_data --install-dir /home/amlab/coop_ws/src/mot_radar/mot_radar/install/save_hesai
+[102.351s] Level 1:colcon.colcon_core.shell:create_environment_hook('save_hesai', 'pythonpath_develop')
+[102.351s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/amlab/coop_ws/src/mot_radar/mot_radar/build/save_hesai/share/save_hesai/hook/pythonpath_develop.ps1'
+[102.352s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/amlab/coop_ws/src/mot_radar/mot_radar/build/save_hesai' returned '0': AMENT_PREFIX_PATH=/home/amlab/coop_ws/src/mot_radar/mot_radar/install/custom_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/amlab/coop_ws/src/mot_radar/mot_radar/install/custom_msgs:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/home/amlab/coop_ws/src/mot_radar/mot_radar/install/custom_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/amlab/coop_ws/src/mot_radar/mot_radar/install/save_hesai/lib/python3.8/site-packages:/home/amlab/coop_ws/src/mot_radar/mot_radar/install/custom_msgs/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/amlab/coop_ws/src/mot_radar/mot_radar/install/save_hesai --editable --build-directory /home/amlab/coop_ws/src/mot_radar/mot_radar/build/save_hesai/build --no-deps install_data --install-dir /home/amlab/coop_ws/src/mot_radar/mot_radar/install/save_hesai
+[102.353s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/amlab/coop_ws/src/mot_radar/mot_radar/build/save_hesai/share/save_hesai/hook/pythonpath_develop.dsv'
+[102.354s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/amlab/coop_ws/src/mot_radar/mot_radar/build/save_hesai/share/save_hesai/hook/pythonpath_develop.sh'
+[102.356s] Level 1:colcon.colcon_core.environment:checking '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/save_hesai' for CMake module files
+[102.357s] Level 1:colcon.colcon_core.environment:checking '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/save_hesai' for CMake config files
+[102.358s] Level 1:colcon.colcon_core.environment:checking '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/save_hesai/lib'
+[102.358s] Level 1:colcon.colcon_core.environment:checking '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/save_hesai/bin'
+[102.358s] Level 1:colcon.colcon_core.environment:checking '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/save_hesai/lib/pkgconfig/save_hesai.pc'
+[102.358s] Level 1:colcon.colcon_core.environment:checking '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/save_hesai/lib/python3.8/site-packages'
+[102.358s] Level 1:colcon.colcon_core.shell:create_environment_hook('save_hesai', 'pythonpath')
+[102.359s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/save_hesai/share/save_hesai/hook/pythonpath.ps1'
+[102.360s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/save_hesai/share/save_hesai/hook/pythonpath.dsv'
+[102.360s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/save_hesai/share/save_hesai/hook/pythonpath.sh'
+[102.361s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(save_hesai)
+[102.362s] INFO:colcon.colcon_core.shell:Creating package script '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/save_hesai/share/save_hesai/package.ps1'
+[102.363s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/save_hesai/share/save_hesai/package.dsv'
+[102.364s] INFO:colcon.colcon_core.shell:Creating package script '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/save_hesai/share/save_hesai/package.sh'
+[102.364s] INFO:colcon.colcon_core.shell:Creating package script '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/save_hesai/share/save_hesai/package.bash'
+[102.365s] INFO:colcon.colcon_core.shell:Creating package script '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/save_hesai/share/save_hesai/package.zsh'
+[102.365s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/amlab/coop_ws/src/mot_radar/mot_radar/install/save_hesai/share/colcon-core/packages/save_hesai)
+[102.366s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[102.366s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[102.367s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[102.367s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[102.389s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[102.389s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[102.389s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[102.413s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[102.414s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/local_setup.ps1'
+[102.416s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/_local_setup_util_ps1.py'
+[102.419s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/setup.ps1'
+[102.421s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/local_setup.sh'
+[102.422s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/_local_setup_util_sh.py'
+[102.423s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/setup.sh'
+[102.424s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/local_setup.bash'
+[102.425s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/setup.bash'
+[102.426s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/local_setup.zsh'
+[102.427s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/amlab/coop_ws/src/mot_radar/mot_radar/install/setup.zsh'

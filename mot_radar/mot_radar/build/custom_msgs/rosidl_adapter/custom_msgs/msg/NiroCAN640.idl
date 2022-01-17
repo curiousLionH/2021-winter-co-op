@@ -1,0 +1,18 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from custom_msgs/msg/NiroCAN640.msg
+// generated code does not contain a copyright notice
+
+
+module custom_msgs {
+  module msg {
+    struct NiroCAN640 {
+      float gway_wheel_velocity_fr;
+
+      float gway_wheel_velocity_rl;
+
+      float gway_wheel_velocity_rr;
+
+      float gway_wheel_velocity_fl;
+    };
+  };
+};

@@ -1,0 +1,12 @@
+uint8   brk21_mode_a
+uint8   brk21_3_1
+uint8   alivecounter21
+uint8   brk21_8_8
+uint8   brk21_1_16
+uint8   brk21_2_17
+uint8   brk21_3_19
+uint8   brk21_2_22
+uint8   brk21_9_24
+uint8   brk21_11_33
+uint8   brk21_12_44
+uint8   brk21_8_56

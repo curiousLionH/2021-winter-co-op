@@ -1,0 +1,4 @@
+float32 gway_lateral_accel_speed
+float32 gway_brakemastercylinderpressure
+float32 gway_longitudinal_accel_speed
+float32 gway_yaw_rate_sensor

@@ -1,0 +1,1 @@
+uint8 avm_alive_counter

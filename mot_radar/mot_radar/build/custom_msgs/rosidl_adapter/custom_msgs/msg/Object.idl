@@ -1,0 +1,28 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from custom_msgs/msg/Object.msg
+// generated code does not contain a copyright notice
+
+
+module custom_msgs {
+  module msg {
+    struct Object {
+      double x;
+
+      double y;
+
+      double z;
+
+      double w;
+
+      double h;
+
+      double rel_v_x;
+
+      double rel_v_y;
+
+      double id;
+
+      double cur_lane;
+    };
+  };
+};

@@ -1,0 +1,1 @@
+uint8 lidar_alive_counter

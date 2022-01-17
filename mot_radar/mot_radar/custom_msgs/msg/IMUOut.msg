@@ -1,0 +1,12 @@
+float64  vx
+float64  vy
+float64  vz
+float64  roll_rate
+float64  pitch_rate
+float64  yaw_rate
+float64  ax
+float64  ay
+float64  az
+float64  roll_acc
+float64  pitch_acc
+float64  yaw_acc

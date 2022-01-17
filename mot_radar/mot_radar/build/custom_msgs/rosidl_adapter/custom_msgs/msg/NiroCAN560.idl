@@ -1,0 +1,26 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from custom_msgs/msg/NiroCAN560.msg
+// generated code does not contain a copyright notice
+
+
+module custom_msgs {
+  module msg {
+    struct NiroCAN560 {
+      uint8 brk22_i;
+
+      uint8 brk22_mode_b;
+
+      uint8 brk22_1_15;
+
+      float brk22_areq1;
+
+      uint8 brk22_1_35;
+
+      float brk22_areq2;
+
+      uint8 alivecounter22;
+
+      uint8 chksum22;
+    };
+  };
+};

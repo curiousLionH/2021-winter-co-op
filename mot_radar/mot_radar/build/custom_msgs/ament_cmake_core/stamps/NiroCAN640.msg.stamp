@@ -1,0 +1,4 @@
+float32 gway_wheel_velocity_fr
+float32 gway_wheel_velocity_rl
+float32 gway_wheel_velocity_rr
+float32 gway_wheel_velocity_fl

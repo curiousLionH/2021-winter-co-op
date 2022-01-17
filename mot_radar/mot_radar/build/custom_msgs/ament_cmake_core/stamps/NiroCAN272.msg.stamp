@@ -1,0 +1,9 @@
+uint8   sft_p
+uint8   sft_r
+uint8   sft_n
+uint8   sft_d
+uint8   sft_p_reversed
+uint8   sft_r_reversed
+uint8   sft_n_reversed
+uint8   sft_d_reversed
+uint8   sft_ctl_en

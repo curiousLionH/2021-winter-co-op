@@ -1,0 +1,9 @@
+uint8   brk24_6_0
+uint8   brk24_6_6
+uint8   brk24_7_12
+uint8   brk24_7_19
+uint8   brk24_mode_c
+uint8   brk24_3_39
+uint8   alivecounter24
+uint8   chksum24
+uint8   brk24_8_56

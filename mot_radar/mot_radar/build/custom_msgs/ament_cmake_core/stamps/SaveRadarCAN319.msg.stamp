@@ -1,0 +1,10 @@
+float64 can_det_confid_azimuth 
+float64 can_det_super_res_target 
+float64 can_det_nd_target 
+float64 can_det_host_veh_clutter 
+float64 can_det_valid_level 
+float64 can_det_azimuth 
+float64 can_det_range 
+float64 can_det_range_rate 
+float64 can_det_amplitude 
+float64 can_scan_index_2lsb 

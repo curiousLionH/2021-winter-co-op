@@ -1,0 +1,26 @@
+running develop
+running egg_info
+creating save_hesai.egg-info
+writing save_hesai.egg-info/PKG-INFO
+writing dependency_links to save_hesai.egg-info/dependency_links.txt
+writing entry points to save_hesai.egg-info/entry_points.txt
+writing requirements to save_hesai.egg-info/requires.txt
+writing top-level names to save_hesai.egg-info/top_level.txt
+writing manifest file 'save_hesai.egg-info/SOURCES.txt'
+reading manifest file 'save_hesai.egg-info/SOURCES.txt'
+writing manifest file 'save_hesai.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/amlab/coop_ws/src/mot_radar/mot_radar/install/save_hesai/lib/python3.8/site-packages/site.py
+Creating /home/amlab/coop_ws/src/mot_radar/mot_radar/install/save_hesai/lib/python3.8/site-packages/save-hesai.egg-link (link to .)
+Installing fit_test script to /home/amlab/coop_ws/src/mot_radar/mot_radar/install/save_hesai/lib/save_hesai
+Installing get_txt script to /home/amlab/coop_ws/src/mot_radar/mot_radar/install/save_hesai/lib/save_hesai
+Installing save_hesai script to /home/amlab/coop_ws/src/mot_radar/mot_radar/install/save_hesai/lib/save_hesai
+Installing save_hesai_test script to /home/amlab/coop_ws/src/mot_radar/mot_radar/install/save_hesai/lib/save_hesai
+
+Installed /home/amlab/coop_ws/src/mot_radar/mot_radar/build/save_hesai
+running install_data
+creating /home/amlab/coop_ws/src/mot_radar/mot_radar/install/save_hesai/share/ament_index
+creating /home/amlab/coop_ws/src/mot_radar/mot_radar/install/save_hesai/share/ament_index/resource_index
+creating /home/amlab/coop_ws/src/mot_radar/mot_radar/install/save_hesai/share/ament_index/resource_index/packages
+copying resource/save_hesai -> /home/amlab/coop_ws/src/mot_radar/mot_radar/install/save_hesai/share/ament_index/resource_index/packages
+copying package.xml -> /home/amlab/coop_ws/src/mot_radar/mot_radar/install/save_hesai/share/save_hesai

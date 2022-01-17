@@ -1,0 +1,13 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from custom_msgs/msg/PathsMultiArray.msg
+// generated code does not contain a copyright notice
+
+#include "custom_msgs/msg/Paths.idl"
+
+module custom_msgs {
+  module msg {
+    struct PathsMultiArray {
+      sequence<custom_msgs::msg::Paths> data;
+    };
+  };
+};

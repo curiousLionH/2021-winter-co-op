@@ -1,0 +1,30 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from custom_msgs/msg/SaveRadarCAN329.msg
+// generated code does not contain a copyright notice
+
+
+module custom_msgs {
+  module msg {
+    struct SaveRadarCAN329 {
+      double can_det_confid_azimuth;
+
+      double can_det_super_res_target;
+
+      double can_det_nd_target;
+
+      double can_det_host_veh_clutter;
+
+      double can_det_valid_level;
+
+      double can_det_azimuth;
+
+      double can_det_range;
+
+      double can_det_range_rate;
+
+      double can_det_amplitude;
+
+      double can_scan_index_2lsb;
+    };
+  };
+};

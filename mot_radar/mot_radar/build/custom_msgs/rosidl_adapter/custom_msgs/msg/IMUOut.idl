@@ -1,0 +1,34 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from custom_msgs/msg/IMUOut.msg
+// generated code does not contain a copyright notice
+
+
+module custom_msgs {
+  module msg {
+    struct IMUOut {
+      double vx;
+
+      double vy;
+
+      double vz;
+
+      double roll_rate;
+
+      double pitch_rate;
+
+      double yaw_rate;
+
+      double ax;
+
+      double ay;
+
+      double az;
+
+      double roll_acc;
+
+      double pitch_acc;
+
+      double yaw_acc;
+    };
+  };
+};

@@ -1,0 +1,6 @@
+float64 can_pbl_field_revision
+float64 can_pbl_promote_revision
+float64 can_sw_field_revision
+float64 can_sw_promote_revision
+float64 can_sw_release_revision
+float64 can_pbl_release_revision

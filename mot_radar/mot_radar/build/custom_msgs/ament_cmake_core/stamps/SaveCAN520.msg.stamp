@@ -1,0 +1,1 @@
+uint8 rtk_alive_counter

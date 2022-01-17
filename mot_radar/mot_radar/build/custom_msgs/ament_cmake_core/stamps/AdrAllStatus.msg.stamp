@@ -1,0 +1,8 @@
+bool lidar_status
+bool ins_status
+bool acc_status
+bool eps_status
+bool safety_warning_status
+bool rtk_status
+bool lane_keeping_status
+bool local_waypoint_status

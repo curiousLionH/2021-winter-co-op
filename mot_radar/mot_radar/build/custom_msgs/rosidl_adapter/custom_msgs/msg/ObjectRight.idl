@@ -1,0 +1,71 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from custom_msgs/msg/ObjectRight.msg
+// generated code does not contain a copyright notice
+
+#include "custom_msgs/msg/Object.idl"
+
+module custom_msgs {
+  module msg {
+    struct ObjectRight {
+      custom_msgs::msg::Object object_0;
+
+      custom_msgs::msg::Object object_1;
+
+      custom_msgs::msg::Object object_2;
+
+      custom_msgs::msg::Object object_3;
+
+      custom_msgs::msg::Object object_4;
+
+      custom_msgs::msg::Object object_5;
+
+      custom_msgs::msg::Object object_6;
+
+      custom_msgs::msg::Object object_7;
+
+      custom_msgs::msg::Object object_8;
+
+      custom_msgs::msg::Object object_9;
+
+      custom_msgs::msg::Object object_10;
+
+      custom_msgs::msg::Object object_11;
+
+      custom_msgs::msg::Object object_12;
+
+      custom_msgs::msg::Object object_13;
+
+      custom_msgs::msg::Object object_14;
+
+      custom_msgs::msg::Object object_15;
+
+      custom_msgs::msg::Object object_16;
+
+      custom_msgs::msg::Object object_17;
+
+      custom_msgs::msg::Object object_18;
+
+      custom_msgs::msg::Object object_19;
+
+      custom_msgs::msg::Object object_20;
+
+      custom_msgs::msg::Object object_21;
+
+      custom_msgs::msg::Object object_22;
+
+      custom_msgs::msg::Object object_23;
+
+      custom_msgs::msg::Object object_24;
+
+      custom_msgs::msg::Object object_25;
+
+      custom_msgs::msg::Object object_26;
+
+      custom_msgs::msg::Object object_27;
+
+      custom_msgs::msg::Object object_28;
+
+      custom_msgs::msg::Object object_29;
+    };
+  };
+};

@@ -1,0 +1,26 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from custom_msgs/msg/SaveRadarCAN32.msg
+// generated code does not contain a copyright notice
+
+
+module custom_msgs {
+  module msg {
+    struct SaveRadarCAN32 {
+      double can_vehicle_stat;
+
+      double can_day_night_status;
+
+      double can_wiper_status;
+
+      double can_yaw_rate_validity;
+
+      double can_yaw_rate;
+
+      double can_vehicle_speed_validity;
+
+      double can_vehicle_speed_direction;
+
+      double can_vehicle_speed;
+    };
+  };
+};

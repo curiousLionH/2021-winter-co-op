@@ -1,0 +1,14 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from custom_msgs/msg/NiroCAN368.msg
+// generated code does not contain a copyright notice
+
+
+module custom_msgs {
+  module msg {
+    struct NiroCAN368 {
+      float gway_accel_pedal_position;
+
+      uint8 gway_gearseldisp;
+    };
+  };
+};

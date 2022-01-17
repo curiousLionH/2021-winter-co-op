@@ -1,0 +1,16 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from custom_msgs/msg/NiroCAN896.msg
+// generated code does not contain a copyright notice
+
+
+module custom_msgs {
+  module msg {
+    struct NiroCAN896 {
+      uint8 brk23_3_0;
+
+      uint8 brk23_1_3;
+
+      uint8 brk23_2_12;
+    };
+  };
+};

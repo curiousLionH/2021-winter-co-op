@@ -1,0 +1,31 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from custom_msgs/msg/VehicleCANmain.msg
+// generated code does not contain a copyright notice
+
+#include "custom_msgs/msg/SaveCAN1808.idl"
+#include "custom_msgs/msg/SaveCAN1809.idl"
+#include "custom_msgs/msg/SaveCAN1810.idl"
+#include "custom_msgs/msg/SaveCAN1811.idl"
+#include "custom_msgs/msg/SaveCAN1812.idl"
+#include "custom_msgs/msg/SaveCAN342.idl"
+#include "custom_msgs/msg/SaveCAN343.idl"
+
+module custom_msgs {
+  module msg {
+    struct VehicleCANmain {
+      custom_msgs::msg::SaveCAN342 eait_control_01;
+
+      custom_msgs::msg::SaveCAN343 eait_control_02;
+
+      custom_msgs::msg::SaveCAN1808 eait_info_eps;
+
+      custom_msgs::msg::SaveCAN1809 eait_info_acc;
+
+      custom_msgs::msg::SaveCAN1810 eait_info_spd;
+
+      custom_msgs::msg::SaveCAN1811 eait_info_imu;
+
+      custom_msgs::msg::SaveCAN1812 eait_info_rad;
+    };
+  };
+};

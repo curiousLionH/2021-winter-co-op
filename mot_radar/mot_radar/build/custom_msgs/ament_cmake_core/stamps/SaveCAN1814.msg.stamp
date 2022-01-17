@@ -1,0 +1,1 @@
+uint8 ins_alive_counter

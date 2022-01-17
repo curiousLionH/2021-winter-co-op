@@ -1,0 +1,2 @@
+float64 can_sequence_number
+float64 can_serial_number

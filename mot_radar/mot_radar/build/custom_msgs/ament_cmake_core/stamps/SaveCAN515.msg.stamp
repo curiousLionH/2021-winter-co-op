@@ -1,0 +1,1 @@
+uint8 bsd_alive_counter

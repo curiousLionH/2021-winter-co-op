@@ -1,0 +1,29 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from custom_msgs/msg/GPSOut.msg
+// generated code does not contain a copyright notice
+
+
+module custom_msgs {
+  module msg {
+    struct GPSOut {
+      @verbatim (language="comment", text=
+        " Synthetic delay to check synchronization (optional)")
+      double synthdelay;
+
+      @verbatim (language="comment", text=
+        " Latitude")
+      @unit (value="degrees")
+      double latitude;
+
+      @verbatim (language="comment", text=
+        " Longitude")
+      @unit (value="degrees")
+      double longitude;
+
+      @verbatim (language="comment", text=
+        " Altitude")
+      @unit (value="m")
+      double altitude;
+    };
+  };
+};

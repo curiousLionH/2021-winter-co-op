@@ -1,0 +1,1 @@
+uint8   gway_brake_active

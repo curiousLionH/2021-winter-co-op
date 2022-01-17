@@ -1,0 +1,21 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from custom_msgs/msg/DetectToDM.msg
+// generated code does not contain a copyright notice
+
+#include "custom_msgs/msg/Object.idl"
+
+module custom_msgs {
+  module msg {
+    struct DetectToDM {
+      sequence<custom_msgs::msg::Object> objects_cur;
+
+      sequence<custom_msgs::msg::Object> objects_left;
+
+      sequence<custom_msgs::msg::Object> objects_right;
+
+      sequence<custom_msgs::msg::Object> objects_inter;
+
+      sequence<custom_msgs::msg::Object> objects_inter_left;
+    };
+  };
+};

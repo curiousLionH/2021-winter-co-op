@@ -1,0 +1,19 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from custom_msgs/msg/AroundPaths.msg
+// generated code does not contain a copyright notice
+
+#include "custom_msgs/msg/Paths.idl"
+
+module custom_msgs {
+  module msg {
+    struct AroundPaths {
+      int16 left_lane;
+
+      int16 right_lane;
+
+      sequence<custom_msgs::msg::Paths> left_lanes;
+
+      sequence<custom_msgs::msg::Paths> right_lanes;
+    };
+  };
+};

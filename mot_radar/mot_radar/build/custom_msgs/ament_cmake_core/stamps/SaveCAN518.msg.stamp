@@ -1,0 +1,1 @@
+uint8 board_alive_counter

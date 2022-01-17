@@ -1,0 +1,3 @@
+float64 can_usc_section_compatibility
+float64 can_pcan_minor_mrr
+float64 can_pcan_major_mrr

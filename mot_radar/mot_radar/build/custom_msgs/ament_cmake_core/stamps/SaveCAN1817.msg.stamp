@@ -1,0 +1,8 @@
+uint8 str_status
+float32 str_time_remain
+uint8 left_status
+float32 left_time_remain
+uint8 ped1_status
+float32 ped1_time_remain
+uint8 ped2_status
+float32 ped2_time_remain

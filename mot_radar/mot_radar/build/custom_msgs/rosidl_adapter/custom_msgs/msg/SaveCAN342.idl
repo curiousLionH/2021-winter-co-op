@@ -1,0 +1,28 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from custom_msgs/msg/SaveCAN342.msg
+// generated code does not contain a copyright notice
+
+
+module custom_msgs {
+  module msg {
+    struct SaveCAN342 {
+      boolean eps_en;
+
+      boolean override_ignore;
+
+      uint8 eps_speed;
+
+      boolean acc_en;
+
+      boolean aeb_en;
+
+      uint8 gear_change;
+
+      uint8 turn_sig_en;
+
+      float aeb_decel_value;
+
+      uint8 aliv_cnt;
+    };
+  };
+};

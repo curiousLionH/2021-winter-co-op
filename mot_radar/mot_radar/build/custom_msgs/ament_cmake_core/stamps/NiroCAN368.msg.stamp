@@ -1,0 +1,2 @@
+float32 gway_accel_pedal_position
+uint8   gway_gearseldisp

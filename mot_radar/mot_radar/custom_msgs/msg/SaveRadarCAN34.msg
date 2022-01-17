@@ -1,0 +1,5 @@
+float64 ipma_pcan_datarangecheck
+float64 ipma_pcan_missingmsg
+float64 vinsignalcomparefailure
+float64 modulenotconfigurederror
+float64 carcfgnotconfigurederror

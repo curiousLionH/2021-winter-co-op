@@ -1,0 +1,1 @@
+uint8 take_over_alive_counter

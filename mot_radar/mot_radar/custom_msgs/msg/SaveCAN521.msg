@@ -1,0 +1,1 @@
+uint8 local_waypoint_alive_counter

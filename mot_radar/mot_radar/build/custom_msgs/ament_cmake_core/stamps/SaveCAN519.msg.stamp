@@ -1,0 +1,1 @@
+uint8 safety_warning_alive_counter

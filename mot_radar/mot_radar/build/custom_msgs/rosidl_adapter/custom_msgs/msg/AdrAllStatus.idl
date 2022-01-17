@@ -1,0 +1,26 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from custom_msgs/msg/AdrAllStatus.msg
+// generated code does not contain a copyright notice
+
+
+module custom_msgs {
+  module msg {
+    struct AdrAllStatus {
+      boolean lidar_status;
+
+      boolean ins_status;
+
+      boolean acc_status;
+
+      boolean eps_status;
+
+      boolean safety_warning_status;
+
+      boolean rtk_status;
+
+      boolean lane_keeping_status;
+
+      boolean local_waypoint_status;
+    };
+  };
+};

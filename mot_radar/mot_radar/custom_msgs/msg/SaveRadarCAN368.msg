@@ -1,0 +1,5 @@
+float64 can_align_updates_done
+float64 can_scan_index
+float64 can_number_of_det
+float64 can_look_id
+float64 can_look_index

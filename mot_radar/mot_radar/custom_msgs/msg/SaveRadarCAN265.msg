@@ -1,0 +1,8 @@
+float64 can_batt_volts
+float64 can_1_25_v
+float64 can_5_v
+float64 can_3_3_v_raw
+float64 can_3_3_v_dac
+float64 can_mmic_temp1
+float64 can_processor_thermistor
+float64 can_processor_temp1

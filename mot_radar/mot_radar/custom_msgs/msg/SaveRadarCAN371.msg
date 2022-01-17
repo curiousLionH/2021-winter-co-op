@@ -1,0 +1,5 @@
+float64 can_auto_align_hangle_qf
+float64 can_alignment_status
+float64 can_alignment_state
+float64 can_auto_align_hangle_ref
+float64 can_auto_align_hangle

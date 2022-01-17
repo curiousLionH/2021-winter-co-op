@@ -1,0 +1,22 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from custom_msgs/msg/NiroCAN1569.msg
+// generated code does not contain a copyright notice
+
+
+module custom_msgs {
+  module msg {
+    struct NiroCAN1569 {
+      uint16 yyyy;
+
+      uint16 mm;
+
+      uint16 dd;
+
+      uint16 hh;
+
+      uint16 nn;
+
+      uint16 ss;
+    };
+  };
+};
